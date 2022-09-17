@@ -14,9 +14,7 @@ export function createAccessToken({
   user,
   session,
 }: {
-  user:
-    | Omit<UserDocument, "password">
-    | LeanDocument<Omit<UserDocument, "password">>;
+  user: UserDocument | LeanDocument<UserDocument>;
   session:
     | Omit<SessionDocument, "password">
     | LeanDocument<Omit<SessionDocument, "password">>;
