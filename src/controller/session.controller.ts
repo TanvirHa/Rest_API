@@ -4,10 +4,11 @@ import { createAccessToken, createSession } from "../service/session.service";
 import { sign } from "../utils/jwt.utils";
 import config from "config";
 import { UserDocument } from "../model/user.model";
+import { DocumentDefinition } from "mongoose";
 
 export async function createUserSessionHandler(req: Request, res: Response) {
   // validate the email and password
-  const user = await validatePassword(req.body);
+  const user: any = await validatePassword(req.body);
 
   if (!user) {
     return res.status(401).send("Invalid username or password");
